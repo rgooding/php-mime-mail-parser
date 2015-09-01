@@ -89,7 +89,7 @@ class Parser
     {
         // streams have to be cached to file first
         $meta = @stream_get_meta_data($stream);
-        if (!$meta || !$meta['mode'] || $meta['mode'][0] != 'r' || $meta['eof']) {
+        if (!$meta || $meta['eof']) {
             throw new \Exception(
                 'setStream() expects parameter stream to be readable stream resource.'
             );
