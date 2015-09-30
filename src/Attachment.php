@@ -131,4 +131,14 @@ class Attachment
         }
         return $this->content;
     }
+
+    /**
+     * Get the size of this attachment in bytes
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+      return fstat($this->stream)['size'];
+    }
 }
